@@ -5,13 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "ts-node-dev --respawn --transpile-only ./publisher.ts"
+    "dev": "ts-node-dev --respawn --transpile-only ./publisher.ts",
+    "start": "ts-node-dev --respawn --transpile-only ./subscriber.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/amqp": "^0.2.5",
     "@types/amqplib": "^0.10.1",
+    "amqp": "^0.2.7",
     "amqplib": "^0.10.3"
   }
 }

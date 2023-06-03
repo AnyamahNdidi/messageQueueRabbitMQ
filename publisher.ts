@@ -1,12 +1,18 @@
 
-import * as amqp from "amqplib"
+import * as amqps from 'amqplib'
 
-const connect = async () => {
+
+const connectRM = async () => {
     try
     {
-        const connection = await amqp.connect('amqp://localhost:5672')
+        const connection = await amqps.connect(`amqp://localhost:5672`);
         const channel = await connection.createChannel();
         console.log("connected to rabbit MQ")
+        const queueName = "userMessage"
+        const message = "idonf get u"
+        channel.assertQueue(queueName)
+        channel.sendToQueue(queueName, Buffer.from(message))
+        console.log(`message sent : ${message}`)
         return channel
     } catch (error)
     {
@@ -15,7 +21,24 @@ const connect = async () => {
 }
 
 const main = async () => {
-  const channel = await connect();
+  const channel2 = await connectRM();
   // Use the channel for further operations
 };
 main()
+
+
+const consume = async () => { 
+
+    try
+    {
+        // await channel.
+        
+    } catch (error)
+    {
+        console.log(error)
+    }
+}
+
+
+
+
