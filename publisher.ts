@@ -9,7 +9,7 @@ const connectRM = async () => {
         const channel = await connection.createChannel();
         console.log("connected to rabbit MQ")
         const queueName = "userMessage"
-        const message = "idonf get u"
+        const message = "i wsdf"
         channel.assertQueue(queueName)
         channel.sendToQueue(queueName, Buffer.from(message))
         console.log(`message sent : ${message}`)
@@ -27,17 +27,17 @@ const main = async () => {
 main()
 
 
-const consume = async () => { 
+// const consume = async () => { 
 
-    try
-    {
-        // await channel.
+//     try
+//     {
+//         // await channel.
         
-    } catch (error)
-    {
-        console.log(error)
-    }
-}
+//     } catch (error)
+//     {
+//         console.log(error)
+//     }
+// }
 
 
 
